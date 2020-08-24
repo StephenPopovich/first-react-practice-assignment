@@ -6,7 +6,7 @@ import React from 'react';
 const userOutput = () => {
 // function of the component returning an input element
   return (
-// Must wrap component in div if you want to return more than one element
+// Must wrap component function in div if you want to return more than one element
     <div>
      <p>Paragraph one text.</p>
      <p>Paragraph two text.</p>
