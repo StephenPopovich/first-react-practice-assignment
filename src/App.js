@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-            <h1><u>First React Practice Assignment Instructions:</u></h1>
+            <h1 className="App-header"><u>First React Practice Assignment Instructions:</u></h1>
           <ol>
             <li>create two new components: UserInput and UserOutput</li>
             <li>UserInput should hlid an input element, UserOutput two paragrpahs</li>
@@ -41,9 +41,10 @@ class App extends Component {
           <UserInput />
 
           <p>Note: Outputs/generates component UserOutput three times with self closing tag</p>
-          <UserOutput />
-          <UserOutput />
-          <UserOutput />
+          <p>Pass a username property (of your choice) to UserOutput via props and display it there.<br/>Currently, passing userName Stephen, Bob and Jesus.</p>
+          <UserOutput userName="Stephen"/>
+          <UserOutput userName="Bob"/>
+          <UserOutput userName="Jesus"/>
 
       </div>
     );
