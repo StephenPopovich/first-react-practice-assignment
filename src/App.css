@@ -9,3 +9,9 @@
 .App-title {
   font-size: 1.5em;
 }
+
+.code-notes{
+  color: #ccc;
+  font-size: 12px;
+  font-style: italic;
+}

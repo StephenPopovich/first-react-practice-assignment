@@ -57,22 +57,22 @@ usernameChangeHandler = (event) => {
             <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
           </ol>
 
-          <p>Note: Outputs/generates component UserInput with self closing tag</p>
-          <p>Pasd a property named 'changed' and add usernameChangeHandler </p>
-          <p>Add two-way-binding to your input (in UserInput) to also display the starting username</p>
+          <p className="code-notes"><strong><strong>Note:</strong></strong> Outputs/generates component UserInput with self closing tag</p>
+          <p className="code-notes">Pasd a property named 'changed' and add usernameChangeHandler </p>
+          <p className="code-notes">Add two-way-binding to your input (in UserInput) to also display the starting username</p>
           <UserInput
             changed={this.usernameChangeHandler}
             currentName={this.state.username}/>
 
-          <p>Note: Outputs/generates component UserOutput three times with self closing tag</p>
-          <p>Pass a username property (of your choice) to UserOutput via props and display it there.<br/>Currently, passing userName Stephen, Bob and Jesus.</p>
+          <p className="code-notes"><strong>Note:</strong> Outputs/generates component UserOutput three times with self closing tag</p>
+          <p className="code-notes">Pass a username property (of your choice) to UserOutput via props and display it there.<br/>Currently, passing userName Stephen, Bob and Jesus.</p>
 
-          <p>Passing dynamtic content to prop</p>
+          <p className="code-notes">Passing dynamtic content to prop</p>
           <UserOutput userName={this.state.username}/>
           <UserOutput userName={this.state.username}/>
 
-          <p>Hardcoded UserOutput content:</p>
-          <UserOutput userName="Jesus"/>
+          <p className="code-notes">Hardcoded UserOutput content:</p>
+          <UserOutput userName="Zack"/>
 
       </div>
     );
