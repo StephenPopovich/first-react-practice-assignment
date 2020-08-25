@@ -3,9 +3,10 @@
 
 import React from 'react';
 // constant and function here
-const userInput = () => {
+const userInput = (props) => {
 // function of the component returning an input element
-  return <input type="text" placeholder="Type Input Here"/>;
+// Pass the event-handler method reference to the UserInput component and bind it to the input-change event
+  return <input type="text" placeholder="Type Input Here" onChange={props.changed} />;
 };
 
 export default userInput;

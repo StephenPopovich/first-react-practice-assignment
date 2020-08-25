@@ -13,7 +13,7 @@ import UserOutput from './UserOutput/UserOutput';
 // 4. Pass a username (of your choice) to UserOutput via props and display it there
 // 5. Add state to the App component (=> the username) and pass the username to the UserOutput components
 // 6. Add a method to mainpulate the state (=> an event-handler method)
-// 7. Pass the event-handler method reference to the UserInput component and bind it to the input-chang event
+// 7. Pass the event-handler method reference to the UserInput component and bind it to the input-change event
 // 8. Ensure the new input entered by the user overwrites the lid username passed to UserOutput
 // 9. Add two-way-binding to your input (in UserInput) to also display the starting username
 // 10. Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets
@@ -28,7 +28,7 @@ class App extends Component {
     username: 'Super Stephen'
   }
 
-// Add a method to mainpulate the state (=> an event-handler method)
+// Add a method (an event listener method) to mainpulate the state (=> an event-handler method). Will update/overwrite state above.
 usernameChangeHandler = (event) => {
   this.setState({
     // event.target.value
@@ -57,17 +57,17 @@ usernameChangeHandler = (event) => {
           </ol>
 
           <p>Note: Outputs/generates component UserInput with self closing tag</p>
-          <UserInput />
+          <p>Pasd a property named 'changed' and add usernameChangeHandler </p>
+          <UserInput changed={this.usernameChangeHandler}/>
 
           <p>Note: Outputs/generates component UserOutput three times with self closing tag</p>
           <p>Pass a username property (of your choice) to UserOutput via props and display it there.<br/>Currently, passing userName Stephen, Bob and Jesus.</p>
 
-          <p>passing dynamtic content to prop</p>
+          <p>Passing dynamtic content to prop</p>
           <UserOutput userName={this.state.username}/>
           <UserOutput userName={this.state.username}/>
 
-          <p>hardcoded UserOutput</p>
-
+          <p>Hardcoded UserOutput content:</p>
           <UserOutput userName="Jesus"/>
 
       </div>
