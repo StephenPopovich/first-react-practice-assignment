@@ -10,7 +10,7 @@ const userOutput = (props) => {
 // Output/pass dynamic content between single curly braces
     <div>
      <p>Username: {props.userName}</p>
-     <p>Paragraph two text.</p>
+     <p>I hope I'll be overwritten</p>
     </div>
   )
 };

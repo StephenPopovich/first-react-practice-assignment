@@ -32,8 +32,9 @@ class App extends Component {
 usernameChangeHandler = (event) => {
   this.setState({
     // event.target.value
-    // event.taget refers to the element the event occured on
-    // value is a valued property we may access, since we know event target will be an input which has a value property which contains the value the user entered.
+      // event.taget refers to the element the event occured on
+      // value is a valued property we may access, since we know event target will be an input which has a value property which contains the value the user entered.
+    // Ensure the new input entered by the user overwrites the lid username passed to UserOutput
     username: event.target.value
   });
 }
@@ -58,7 +59,10 @@ usernameChangeHandler = (event) => {
 
           <p>Note: Outputs/generates component UserInput with self closing tag</p>
           <p>Pasd a property named 'changed' and add usernameChangeHandler </p>
-          <UserInput changed={this.usernameChangeHandler}/>
+          <p>Add two-way-binding to your input (in UserInput) to also display the starting username</p>
+          <UserInput
+            changed={this.usernameChangeHandler}
+            currentName={this.state.username}/>
 
           <p>Note: Outputs/generates component UserOutput three times with self closing tag</p>
           <p>Pass a username property (of your choice) to UserOutput via props and display it there.<br/>Currently, passing userName Stephen, Bob and Jesus.</p>
