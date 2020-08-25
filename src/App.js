@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // imports component #1 UserInput, do not need to specify .js because it is a JavaScript file
@@ -19,7 +18,27 @@ import UserOutput from './UserOutput/UserOutput';
 // 9. Add two-way-binding to your input (in UserInput) to also display the starting username
 // 10. Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets
 
+// *** LAST LEFT ON TIME STAMP 8:29, #5 ****
+
+// App is a normal react component, but since it the extends the Compontent object provided by react is it a mine container
 class App extends Component {
+//state is just a propert of your class and a JavaScript objects
+// Add state to the App component (=> the username) and pass the username to the UserOutput components
+  state = {
+    username: 'Super Stephen'
+  }
+
+// Add a method to mainpulate the state (=> an event-handler method)
+usernameChangeHandler = (event) => {
+  this.setState({
+    // event.target.value
+    // event.taget refers to the element the event occured on
+    // value is a valued property we may access, since we know event target will be an input which has a value property which contains the value the user entered.
+    username: event.target.value
+  });
+}
+
+// render is also a method, but uses a different syntax
   render() {
     return (
       <div className="App">
@@ -42,8 +61,13 @@ class App extends Component {
 
           <p>Note: Outputs/generates component UserOutput three times with self closing tag</p>
           <p>Pass a username property (of your choice) to UserOutput via props and display it there.<br/>Currently, passing userName Stephen, Bob and Jesus.</p>
-          <UserOutput userName="Stephen"/>
-          <UserOutput userName="Bob"/>
+
+          <p>passing dynamtic content to prop</p>
+          <UserOutput userName={this.state.username}/>
+          <UserOutput userName={this.state.username}/>
+
+          <p>hardcoded UserOutput</p>
+
           <UserOutput userName="Jesus"/>
 
       </div>
